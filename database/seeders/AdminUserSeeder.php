@@ -15,7 +15,7 @@ class AdminUserSeeder extends Seeder
     {
         $user = User::find(1);
 
-        $user->user_type = 'admin';
+        $user->user_type = 'Admin';
         $user->save();
 
         $user->assignRole('admin');
