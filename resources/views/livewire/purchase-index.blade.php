@@ -12,13 +12,13 @@ new class extends Component
 
     <div class="flex justify-between mb-4">
         <h1 class="text-2xl font-bold">Purchases</h1>
-
-        @role('Admin')
+        @if(auth()->user()->user_type === 'Admin')
             <a href="{{ route('purchase.create') }}"
                class="bg-blue-500 text-white px-4 py-2 rounded">
                 Create Purchase
             </a>
-        @endrole
+        @endif
+           
     </div>
 
     <table class="w-full border border-gray-300">

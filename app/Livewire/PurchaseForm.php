@@ -20,6 +20,16 @@ class PurchaseForm extends Component
 
     public function mount()
     {
+
+
+        if (!auth()->check()) {
+            abort(403);
+        }
+
+        if (!auth()->user()->user_type === 'Admin') {
+            abort(403);
+        }
+
         $this->items = Item::all();
         $this->brands = Brand::all();
 

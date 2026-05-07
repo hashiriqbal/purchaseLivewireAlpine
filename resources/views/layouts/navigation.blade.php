@@ -22,7 +22,12 @@
                     <x-nav-link :href="route('purchases.index')" :active="request()->routeIs('purchases.index')">
                         {{ __('Purchases') }}
                     </x-nav-link>
-            </div>
+                    @role('admin')
+                    <x-nav-link :href="route('admin.panel')">
+                        {{ __('Admin Panel') }}
+                    </x-nav-link>
+                    @endrole
+                </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
